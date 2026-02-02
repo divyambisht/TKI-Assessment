@@ -2,7 +2,7 @@
 import { GoogleGenAI } from "@google/genai";
 import { ConflictStyle } from "../types";
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY || '' });
+const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_API_KEY || '' });
 
 export async function getPersonalizedInsights(scores: Record<ConflictStyle, number>, topStyle: ConflictStyle, userName: string) {
   const prompt = `
